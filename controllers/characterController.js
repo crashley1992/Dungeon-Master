@@ -1,5 +1,7 @@
 const db = require("../models/Character");
 
+var email;
+
 // Defining methods for the controller
 module.exports = {
     findAll: function(req, res) {
@@ -13,7 +15,7 @@ module.exports = {
         .catch(err => res.status(422).json(err));
     },
     create: function(req, res) {
-        db.Character.create(req.body)
+        db.Character.create({email: email}, req.body)
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err));
     },

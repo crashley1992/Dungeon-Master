@@ -10,12 +10,12 @@ module.exports = {
         .catch(err => res.status(422).json(err));
     },
     findOne: function(req, res) {
-        db.Character.findOne({email: req.body.email})
+        db.Character.findOne({email: req.body.email}, {name: req.body.name})
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err));
     },
     create: function(req, res) {
-        db.Character.create({email: email}, req.body)
+        db.Character.create({email: req.body.email}, req.body)
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err));
     },

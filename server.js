@@ -42,17 +42,7 @@ dbc.once('open', () => {
     require('./models/Users');
 });
 
-var charsDB = require("./models/Character");
-
-//Configure Mongoose for Passwords/Logins
-// mongoose.connect("mongodb://localhost/dungeon-master-logins", { useNewUrlParser: true }, (err) => {
-//   if (err) {
-//     console.log(err);
-//   } else {
-//     console.log('connected to DB');
-//     require('./models/Users');
-//   }
-// });
+// var charsDB = require("./models/Character");
 
 //models and routes
 require('./config/passport');

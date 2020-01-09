@@ -12,5 +12,4 @@ const JumbotronBody = () => {
     )
 }
 
-
 export default JumbotronBody;

@@ -2,8 +2,6 @@ import React from 'react';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import './nav-tabs.css'
-import LoginModal from '../LoginModal/LoginModal';
-import CreateAccountModal from '../CreateAccountModal/CreateAccountModal';
 
 const NavTabs = () => {
     return (
@@ -14,8 +12,12 @@ const NavTabs = () => {
         <Nav className="mr-auto">
           <Nav.Link href="#About">About</Nav.Link>
           </Nav>
-<LoginModal />
-<CreateAccountModal />
+          <Nav className="mr-auto">
+          <Nav.Link href="/login">Login</Nav.Link>
+          </Nav>
+          <Nav className="mr-auto">
+          <Nav.Link href="/signup">Signup</Nav.Link>
+          </Nav>
           </Navbar.Collapse>
 </Navbar>
     )

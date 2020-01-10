@@ -6,7 +6,7 @@ import './nav-tabs.css'
 const NavTabs = () => {
     return (
       <Navbar bg="light" expand="lg">
-      <Navbar.Brand href="#home">Dungeon Master</Navbar.Brand>
+      <Navbar.Brand href="/">Dungeon Master</Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">

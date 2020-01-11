@@ -10,34 +10,34 @@ import CreateCharacter from './pages/CreateCharacter';
 
 class App extends Component {
   state = {
-    loggedIn: false,
+    loggedIn: false
   }
 
-  logUserIn() {
+  handleUpdateLogin = () => {
     this.setState({loggedIn: true})
-  }
+}
 
   render() {    
     return (
       <Router>
       <NavTabs />
       <Route exact path="/" component={Home} />
-      <Route path="/login" component={Login}  render={() => (
-        this.state.loggedIn ? (
-          <UserProfile />
-        ) : (
-          <Login onSuccess={this.logUserIn} />
-        )
-      )} />
-          <Route path="/signup" component={Signup}  render={() => (
+      <Route path="/login" 
+        render={(props) => ( this.state.loggedIn ? (
+        <UserProfile loggedIn={true} component={UserProfile}/>
+      ) : (
+        <Login {...props} handleUpdateLogin={this.handleUpdateLogin}/>
+      )
+      )}/>
+          {/* <Route path="/signup" component={Signup}  render={() => (
         this.state.loggedIn ? (
           <UserProfile />
         ) : (
           <Signup />
         )
-      )} />
-        <Route exact path="/userprofile" component={UserProfile} />
-        <Route exact path="/createcharacter" component={CreateCharacter} />
+
+      )} /> */}
+        
         </Router>
       )
   }

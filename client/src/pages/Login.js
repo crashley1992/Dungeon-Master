@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 class Login extends Component {
+  
     state = {
         _id: '',
         email: '',
@@ -9,8 +10,9 @@ class Login extends Component {
         token: '',
     }
 
-    postDataHandler = () => {
-        const data = {
+    postDataHandler = (event) => {
+        event.preventDefault();
+            const data = {
             email: this.state.email,
             password: this.state.password
         }
@@ -23,13 +25,13 @@ class Login extends Component {
             this.setState({token: response.data.user.token})
         }).catch((err) => {
             console.log(err);
-            alert("Incorrect email or password");
+            console.log("Incorrect email or password");
         })
     }
 
         componentDidUpdate() {
-            console.log(this.state.token + " test");
-            console.log(this.state._id)
+            // console.log(this.state.token + " test");
+            // console.log(this.state._id)
             const newData = {
                 _id: this.state._id,
                 email: this.state.email,
@@ -47,8 +49,9 @@ class Login extends Component {
              }
             )
             .then(response => {
-                console.log(response.data.user._id);
-                this.setState({loggedIn: true})
+                // console.log(response.data.user._id);
+                // this.setState({loggedIn: true})
+                this.props.handleUpdateLogin()
             }).catch((err) => {
                 console.log(err);
             })
@@ -63,7 +66,7 @@ class Login extends Component {
                 <input type="text" value={this.state.email} onChange={(event) => this.setState({email: event.target.value})} />
                 <label>Password</label>
                 <input type="password" value={this.state.password} onChange={(event) => this.setState({password: event.target.value})} />
-                <button onClick={this.postDataHandler} onSubmit={this.loggedIn}>Submit</button>
+                <button onClick={this.postDataHandler}>Submit</button>
                 </form>
             </div>
         )

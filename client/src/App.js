@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import UserProfile from './pages/UserProfile';
+import CreateCharacter from './pages/CreateCharacter';
 
 class App extends Component {
   state = {
@@ -34,6 +35,7 @@ class App extends Component {
         ) : (
           <Signup />
         )
+
       )} /> */}
         
         </Router>

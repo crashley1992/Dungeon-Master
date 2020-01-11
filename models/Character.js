@@ -5,7 +5,7 @@ var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 
 var CharacterSchema = new Schema({
-    email: {
+    userID: {
         type: String,
         required: true
     },

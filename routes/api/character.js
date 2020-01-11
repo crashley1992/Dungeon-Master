@@ -29,7 +29,7 @@ router.get("/character/:id", (req, res) => {
 		});
 });
 
-// Route for saving/updating a Character
+// Route for saving/updating 
 router.post("/character/:id", (req, res) => {
 	console.log(req.body);
 	db.Character.create(req.body)

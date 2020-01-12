@@ -28,21 +28,15 @@ if(!isProduction) {
   app.use(errorHandler());
 }
 
-// set up mongo for what database it's using
-const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/default";
-
-// connect
-mongoose.connect(MONGODB_URI);
-
-const dbc = mongoose.connection;
-
-dbc.on('error', console.error.bind(console, 'connection error:'));
-dbc.once('open', () => {
-    console.log('connected');
+//Configure Mongoose for Passwords/Logins
+mongoose.connect("mongodb://localhost/dungeon-master-logins", { useNewUrlParser: true }, (err) => {
+  if (err) {
+    console.log(err);
+  } else {
+    console.log('connected to DB');
     require('./models/Users');
+  }
 });
-
-// var charsDB = require("./models/Character");
 
 //models and routes
 require('./config/passport');
@@ -76,4 +70,4 @@ app.use((err, req, res, next) => {
 
 app.listen(PORT, () => {
     console.log("App now listening at localhost:" + PORT);
-});
+  });

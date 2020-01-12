@@ -1,3 +1,29 @@
-button {
-    margin-right: 2%;
+body {
+    background-color: #5b5656;
+}
+
+.navbar {
+    background-color: #5b5656;
+}
+
+.navbar-brand {
+    font-size: 25px;
+    color: #7fcd91 !important;
+    font-weight: bold;
+}
+
+.navbar-brand:hover {
+    font-size: 25px;
+    color: #f5eaea !important;
+    font-weight: bold;
+}
+
+.nav-link {
+    font-size: 20px;
+    color: #7fcd91 !important;
+}
+
+.nav-link:hover {
+    font-size: 20px;
+    color: #f5eaea !important;
 }

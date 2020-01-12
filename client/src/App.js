@@ -10,12 +10,17 @@ import CreateCharacter from './pages/CreateCharacter';
 
 class App extends Component {
   state = {
-    loggedIn: false
+    loggedIn: false,
+    newAccount: false
   }
 
   handleUpdateLogin = () => {
     this.setState({loggedIn: true})
 }
+
+  handleSignup = () => {
+    this.setState({newAccount: true})
+  }
 
   render() {    
     return (
@@ -29,15 +34,13 @@ class App extends Component {
         <Login {...props} handleUpdateLogin={this.handleUpdateLogin}/>
       )
       )}/>
-          {/* <Route path="/signup" component={Signup}  render={() => (
-        this.state.loggedIn ? (
-          <UserProfile />
-        ) : (
-          <Signup />
-        )
-
-      )} /> */}
-        
+          <Route path="/signup" 
+        render={(props) => ( this.state.newAccount ? (
+        <UserProfile newAccount={true} component={UserProfile}/>
+      ) : (
+        <Signup {...props} handleSignup={this.handleSignup}/>
+      )
+      )}/>        
         </Router>
       )
   }

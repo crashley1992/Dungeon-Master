@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import './login.css';
 
 class Login extends Component {
   
@@ -60,13 +61,13 @@ class Login extends Component {
     render() {
         return (
              <div className="login-page">
-                <h1>Login</h1>
+                <h1 className="login-title">Login</h1>
                 <form className="form-styles">
                 <label>Email</label>
                 <input type="text" value={this.state.email} onChange={(event) => this.setState({email: event.target.value})} />
                 <label>Password</label>
                 <input type="password" value={this.state.password} onChange={(event) => this.setState({password: event.target.value})} />
-                <button onClick={this.postDataHandler}>Submit</button>
+                <button className="btn btn-info" onClick={this.postDataHandler}>Submit</button>
                 </form>
             </div>
         )

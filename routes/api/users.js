@@ -8,7 +8,7 @@ const Users = mongoose.model('Users');
 router.post('/signup', auth.optional, (req, res, next) => {
   const { email, password } = req.body
   console.log("Email:" + email);
-  console.log("Email:" + password);
+  console.log("password:" + password);
 
   if(!email) {
     return res.status(422).json({

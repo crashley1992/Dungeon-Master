@@ -40,9 +40,12 @@ UsersSchema.methods.toAuthJSON = function() {
   };
 };
 
-const userDB = mongoose.connection.useDb("dungeon-master-logins");
+// const userDB = mongoose.connection.useDb("dungeon-master-logins");
 
-// variable for exporting the model schema thing
-const Users = userDB.model("Users", UsersSchema);
+// // variable for exporting the model schema thing
+// const Users = userDB.model("Users", UsersSchema);
+
+const Users = mongoose.model('Users', UsersSchema);
+
 
 module.exports = Users

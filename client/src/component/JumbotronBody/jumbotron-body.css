@@ -1,4 +1,8 @@
 .jumbotron {
    height: 500px;
+   background-image: url('./homepage-background.jpg');
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: bottom;
 }
 

@@ -12,6 +12,12 @@ body {
     font-weight: bold;
 }
 
+.logo {
+    border-radius: 50%;
+    width: 100px;
+    height: 75px;
+}
+
 .navbar-brand:hover {
     font-size: 25px;
     color: #f5eaea !important;

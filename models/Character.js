@@ -116,11 +116,13 @@ var CharacterSchema = new Schema({
     }
 });
 
-// variable for exporting the model schema thing
-const charDB = mongoose.connection.useDb("dungeon-master-characters");
+// // variable for exporting the model schema thing
+// const charDB = mongoose.connection.useDb("dungeon-master-characters");
 
-// variable for exporting the model schema thing
-const Character = charDB.model("Character", CharacterSchema);
+// // variable for exporting the model schema thing
+// const Character = charDB.model("Character", CharacterSchema);
+
+const Characters = mongoose.model('Characters', CharacterSchema);
 
 // export
 module.exports = Character;

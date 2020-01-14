@@ -41,7 +41,6 @@ class App extends Component {
         <Signup {...props} handleSignup={this.handleSignup}/>
       )
       )}/>
-
       <Route path="/logout" component={Home}/>
         </Router>
       )

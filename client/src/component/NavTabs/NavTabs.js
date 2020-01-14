@@ -18,6 +18,9 @@ const NavTabs = () => {
           <Nav>
           <Nav.Link href="/signup">Signup</Nav.Link>
           </Nav>
+          <Nav>
+          <Nav.Link href="/logout">Logout</Nav.Link>
+          </Nav>
           </Navbar.Collapse>
 </Navbar>
     )

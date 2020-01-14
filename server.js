@@ -35,6 +35,7 @@ mongoose.connect("mongodb://localhost/dungeon-master-logins", { useNewUrlParser:
   } else {
     console.log('connected to DB');
     require('./models/Users');
+    require('./models/Character');
   }
 });
 

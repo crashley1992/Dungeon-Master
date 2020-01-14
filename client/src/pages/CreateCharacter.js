@@ -6,10 +6,7 @@ import './createcharacter.css'
 
 class CreateCharacter extends Component {
 	state = {
-		name: '',
-		class: '',
-		race: '',
-		age: ''
+		newCharacter: {}
 	}
 
 	postDataHandler = () => {
@@ -17,7 +14,80 @@ class CreateCharacter extends Component {
 			name: this.state.name,
 			class: this.state.class,
 			race: this.state.race,
-			age: this.state.age
+			age: this.state.age,
+			level: this.state.level,
+
+			stats: [{
+				str: this.state.stats.str,
+				dex: this.state.stats.dex,
+				con: this.state.stats.con,
+				int: this.state.stats.int,
+				wis: this.state.stats.wis,
+				cha: this.state.stats.cha,
+			}], 
+
+			skills: [{
+				acrobatics: this.state.skills.acrobatics,
+				animal: this.state.skills.animal,
+				arcana: this.state.skills.arcana,
+				athletics: this.state.skills.athletics,
+				deception: this.state.skills.deception,
+				history: this.state.skills.history,
+				insight: this.state.skills.insight,
+				intimidation: this.state.skills.intimidation,
+				investigation: this.state.skills.investigation,
+				medicine: this.state.skills.medicine,
+				nature: this.state.skills.nature,
+				perception: this.state.skills.perception,
+				performance: this.state.skills.performance,
+				persuasion: this.state.skills.persuasion,
+				religion: this.state.skills.religion,
+				sleight: this.state.skills.sleights,
+				stealth: this.state.skills.stealth,
+				survival: this.state.skills.survival,
+			}],
+
+			ac: this.state.ac,
+			initiative: this.state.initiative,
+			speed: this.state.speed,
+			hp: this.state.hp,
+			thp: this.state.thp,
+			hitDice: this.state.hitDice,
+
+			attacksSpellcasting: [{
+				name: this.state.attacksSpellcasting.name,
+				atk: this.state.attacksSpellcasting.atk,
+				dmgType: this.state.attacksSpellcasting.dmgType,
+			},
+			{
+				name: this.state.attacksSpellcasting.name,
+				atk: this.state.attacksSpellcasting.atk,
+				dmgType: this.state.attacksSpellcasting.dmgType,
+			},
+			{
+				name: this.state.attacksSpellcasting.name,
+				atk: this.state.attacksSpellcasting.atk,
+				dmgType: this.state.attacksSpellcasting.dmgType,
+			}],
+
+			money: [{
+				platinum: this.state.money.platinum,
+				gold: this.state.money.gold,
+				electrum: this.state.money.electrum,
+				silver: this.state.money.silver,
+				copper: this.state.money.copper,
+			}],
+
+			inventory: this.state.inventory,
+
+			characterNotes: [{
+				traits: this.state.characterNotes.traits,
+				ideals: this.state.characterNotes.traits,
+				bonds: this.state.characterNotes.traits,
+				flaws: this.state.characterNotes.traits,
+			}],
+
+			featsTraits: this.state.featsTraits
 		}
 
 		axios.post('http://localhost:3001/character', data)

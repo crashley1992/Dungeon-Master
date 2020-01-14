@@ -40,7 +40,9 @@ class App extends Component {
       ) : (
         <Signup {...props} handleSignup={this.handleSignup}/>
       )
-      )}/>        
+      )}/>
+        {/* Temporary         */}
+        <Route path='/createcharacter' component={CreateCharacter} />
         </Router>
       )
   }

@@ -26,7 +26,7 @@ class Login extends Component {
             this.setState({token: response.data.user.token})
         }).catch((err) => {
             console.log(err);
-            console.log("Incorrect email or password");
+            alert("Incorrect email or password");
         })
     }
 

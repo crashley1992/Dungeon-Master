@@ -11,7 +11,8 @@ import CreateCharacter from './pages/CreateCharacter';
 class App extends Component {
   state = {
     loggedIn: false,
-    newAccount: false
+    newAccount: false,
+    logoutSession: false
   }
 
   handleUpdateLogin = () => {
@@ -20,6 +21,10 @@ class App extends Component {
 
   handleSignup = () => {
     this.setState({newAccount: true})
+  }
+
+  handleLogout= () => {
+      this.setState({newAccount: false, loggedIn: false})
   }
 
   render() {    
@@ -40,7 +45,9 @@ class App extends Component {
       ) : (
         <Signup {...props} handleSignup={this.handleSignup}/>
       )
-      )}/>        
+      )}/>
+
+      <Route path="/logout" component={Home}/>
         </Router>
       )
   }

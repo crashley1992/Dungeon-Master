@@ -1,7 +1,7 @@
 import React from 'react';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
-import Image from 'react-bootstrap/Image'
+import Image from 'react-bootstrap/Image';
 import './nav-tabs.css'
 
 const NavTabs = () => {
@@ -17,6 +17,9 @@ const NavTabs = () => {
           </Nav>
           <Nav>
           <Nav.Link href="/signup">Signup</Nav.Link>
+          </Nav>
+          <Nav>
+          <Nav.Link href="/logout">Logout</Nav.Link>
           </Nav>
           </Navbar.Collapse>
 </Navbar>

@@ -7,7 +7,7 @@ const CharacterCard = (props) => {
 
 	return (
 		<Card className="character-card">
-			<Card.Header>{props.name || "unnamed"}</Card.Header>
+			<Card.Header>{props.name || "You Have No Characters"}</Card.Header>
 			<Card.Body>
 			<Card.Title></Card.Title>
 				<Card.Text>

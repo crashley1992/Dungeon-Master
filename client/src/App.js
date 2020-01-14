@@ -42,6 +42,9 @@ class App extends Component {
       )
       )}/>
       <Route path="/logout" component={Home}/>
+        
+        {/* temp route */}
+      <Route path="/createcharacter" component={CreateCharacter} />
         </Router>
       )
   }

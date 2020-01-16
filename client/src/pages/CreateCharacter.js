@@ -23,16 +23,16 @@ class CreateCharacter extends Component {
 			age: this.state.age,
 			level: this.state.level,
 
-			stats: [{
+			stats: {
 				str: this.state.stats.str,
 				dex: this.state.stats.dex,
 				con: this.state.stats.con,
 				int: this.state.stats.int,
 				wis: this.state.stats.wis,
 				cha: this.state.stats.cha,
-			}], 
+			}, 
 
-			skills: [{
+			skills: {
 				acrobatics: this.state.skills.acrobatics,
 				animal: this.state.skills.animal,
 				arcana: this.state.skills.arcana,
@@ -51,7 +51,7 @@ class CreateCharacter extends Component {
 				sleight: this.state.skills.sleights,
 				stealth: this.state.skills.stealth,
 				survival: this.state.skills.survival,
-			}],
+			},
 
 			ac: this.state.ac,
 			initiative: this.state.initiative,
@@ -96,7 +96,8 @@ class CreateCharacter extends Component {
 			featsTraits: this.state.featsTraits
 		}
 
-		axios.post('http://localhost:3001/character', data)
+		// +this.props.userID
+		axios.post('http://localhost:3001/api/character/rjgjviekdkr', data)
 			.then(response => {
 				console.log(response);
 			}).catch((err) => {

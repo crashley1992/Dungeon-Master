@@ -12,8 +12,21 @@ class App extends Component {
   state = {
     loggedIn: false,
     newAccount: false,
+    id: ''
   }
 
+  idUpdate = (id) => {
+    this.setState({id: id},
+      () => {
+        console.log(this.state.id + "****test*****");
+      })
+  }
+
+  componentDidUpdate() {
+    console.log(this.state.id + "component update");
+
+  }
+  
   handleUpdateLogin = () => {
     this.setState({loggedIn: true})
 }
@@ -31,10 +44,13 @@ class App extends Component {
         render={(props) => ( this.state.loggedIn ? (
         <UserProfile loggedIn={true} component={UserProfile}/>
       ) : (
-        <Login {...props} handleUpdateLogin={this.handleUpdateLogin}/>
+        <Login {...props} 
+        handleUpdateLogin={this.handleUpdateLogin}
+        idUpdate={this.idUpdate}
+        />
       )
       )}/>
-          <Route path="/signup" 
+        <Route path="/signup" 
         render={(props) => ( this.state.newAccount ? (
         <UserProfile newAccount={true} component={UserProfile}/>
       ) : (

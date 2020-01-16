@@ -28,34 +28,10 @@ var CharacterSchema = new Schema({
         type: Number,
         required: true
     },
-    stats: [{
-        str: Number,
-        dex: Number,
-        con: Number,
-        int: Number,
-        wis: Number,
-        cha: Number
-    }],
-    skills: [{
-        acrobatics: false,
-        animal: false,
-        arcana: false,
-        athletics: false,
-        deception: false,
-        history: false,
-        insight: false,
-        intimidation: false,
-        investigation: false,
-        medicine: false,
-        nature: false,
-        perception: false,
-        performance: false,
-        persuasion: false,
-        religion: false,
-        sleight: false,
-        stealth: false,
-        survival: false
-    }],
+    stats: {
+    },
+    skills: {
+    },
     ac: {
         type: Number,
         required: true

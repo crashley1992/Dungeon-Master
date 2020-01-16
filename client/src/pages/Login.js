@@ -22,7 +22,7 @@ class Login extends Component {
         .then(response => {
             console.log(response);
             // console.log(response.data.user.token);
-            this.setState({_id: response.data.user._id})
+            this.setState({_id: response.data.user._id}, this.props.idUpdate(response.data.user._id))
             this.setState({token: response.data.user.token})
         }).catch((err) => {
             console.log(err);
@@ -31,6 +31,7 @@ class Login extends Component {
     }
 
         componentDidUpdate() {
+            // console.log(this.props.idUpdate)
             // console.log(this.state.token + " test");
             // console.log(this.state._id)
             const newData = {
@@ -57,6 +58,8 @@ class Login extends Component {
                 console.log(err);
             })
         }
+
+            
 
     render() {
         return (

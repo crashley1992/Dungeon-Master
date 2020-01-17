@@ -22,11 +22,6 @@ class App extends Component {
       })
   }
 
-  componentDidUpdate() {
-    console.log(this.state.id + "component update");
-
-  }
-  
   handleUpdateLogin = () => {
     this.setState({loggedIn: true})
 }
@@ -52,7 +47,7 @@ class App extends Component {
       )}/>
         <Route path="/signup" 
         render={(props) => ( this.state.newAccount ? (
-        <UserProfile newAccount={true} component={UserProfile}/>
+        <Login loggedIn={true} component={Login}/>
       ) : (
         <Signup {...props} handleSignup={this.handleSignup}/>
       )

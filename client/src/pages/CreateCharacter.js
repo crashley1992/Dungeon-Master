@@ -6,14 +6,14 @@ import './createcharacter.css'
 
 class CreateCharacter extends Component {
 	state = {
-		"id": '',
+		id: '',
 		newCharacter: {}
 	}
 
 	componentDidUpdate = (props) => {
-		this.props.idUpdate();
-		this.setState({"id": this.props.id});
-		console.log(this.state.id + " info passed to character");
+		this.props.passID();
+		this.setState({id: this.props.id});
+		console.log(this.state.id + " id passed");
 	}
 
 	postDataHandler = () => {

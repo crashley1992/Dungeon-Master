@@ -6,8 +6,14 @@ import GroupCard from '../component/GroupCard/GroupCard';
 class UserProfile extends Component {
     state = {
         characters: [],
-        groups: []
+        groups: [],
+        "id": ''
     };
+
+    componentDidUpdate = (props) => {
+		this.props.idUpdate();
+		this.setState({"id": this.props.id});
+	}
 
     render(props) {
         return (

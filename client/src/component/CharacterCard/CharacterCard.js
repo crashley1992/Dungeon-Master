@@ -1,21 +1,41 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Card from 'react-bootstrap/Card';
 import './character-card.css';
-// import axios from 'axios';
+import axios from 'axios';
+// import CreateCharacter from 'CreateCharacter';
 
-const CharacterCard = (props) => {
+class CharacterCard extends Component {
+	state = {
+		// savedCharacters: [],
+		initialized: true
+	}
 
-	return (
-		<Card className="character-card">
-			<Card.Header>{props.name || "You Have No Characters"}</Card.Header>
-			<Card.Body>
-			<Card.Title></Card.Title>
-				<Card.Text>
+	componentDidMount() {
+		this.getCharacters();
+	}
 
-          </Card.Text>
-			</Card.Body>
-		</Card>
-	)
+	getCharacters = () => {
+		axios.get('/api/character')
+			.then(res => {
+				// this.setState({ savedCharacters: res.data })
+			})
+			.catch(err => console.log(err))
+	}
+
+	render() {
+		return (
+			<Card className="character-card">
+				{/* <Card.Header>{savedCharacters.name || "You Have No Characters"}</Card.Header> */}
+				<Card.Body>
+					<Card.Title></Card.Title>
+					<Card.Text>
+
+					</Card.Text>
+				</Card.Body>
+			</Card>
+		)
+		
+	}		
 	
 };
 

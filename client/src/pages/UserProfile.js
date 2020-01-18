@@ -17,11 +17,6 @@ class UserProfile extends Component {
         console.log('The link was clicked.');
     };
 
-    passID = (props) => {
-		this.props.idUpdate();
-		this.setState({id: this.props.id});
-	}
-
     render(props) {
         return (
              <div className="profile-page">
@@ -29,7 +24,7 @@ class UserProfile extends Component {
                     <h1>Characters</h1>
                     <button onClick={this.handleClick}>Add Character</button>
                     { this.state.showComponent ? 
-                    <CreateCharacter passID={this.passID} /> : 
+                    <CreateCharacter id={this.props.id} /> : 
                     null
                     } 
                     <CharacterCard />

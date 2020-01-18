@@ -37,7 +37,7 @@ class App extends Component {
       <Route exact path="/" component={Home} />
       <Route path="/login" 
         render={(props) => ( this.state.loggedIn ? (
-        <UserProfile loggedIn={true} newAccount={true} component={UserProfile} idUpdate={this.idUpdate}/>
+        <UserProfile loggedIn={true} newAccount={true} component={UserProfile} id={this.state.id}/>
       ) : (
         <Login {...props} 
         handleUpdateLogin={this.handleUpdateLogin}

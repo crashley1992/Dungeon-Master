@@ -8,13 +8,19 @@ class UserProfile extends Component {
     state = {
         characters: [],
         groups: [],
-        showComponent: null
+        showComponent: null,
+        id: ''
     };
 
     handleClick = () => {
         this.setState({ showComponent: true })
         console.log('The link was clicked.');
     };
+
+    passID = (props) => {
+		this.props.idUpdate();
+		this.setState({id: this.props.id});
+	}
 
     render(props) {
         return (
@@ -23,7 +29,7 @@ class UserProfile extends Component {
                     <h1>Characters</h1>
                     <button onClick={this.handleClick}>Add Character</button>
                     { this.state.showComponent ? 
-                    <CreateCharacter /> : 
+                    <CreateCharacter passID={this.passID} /> : 
                     null
                     } 
                     <CharacterCard />

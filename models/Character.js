@@ -71,22 +71,22 @@ var CharacterSchema = new Schema({
             dmgType: String
         }
     ],
-    money: [{
+    money: {
         platinum: Number,
         gold: Number,
         electrum: Number,
         silver: Number,
         copper: Number
-    }],
+    },
     inventory: {
         type: String
     },
-    characterNotes: [{
+    characterNotes: {
         traits: String,
         ideals: String,
         bonds: String,
         flaws: String
-    }],
+    },
     featsTraits: {
         type: String
     }

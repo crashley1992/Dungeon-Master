@@ -6,13 +6,14 @@ import './createcharacter.css'
 
 class CreateCharacter extends Component {
 	state = {
-		"_id": '',
+		id: '',
 		newCharacter: {}
 	}
 
 	componentDidUpdate = (props) => {
-
-		console.log(this.state._id + " info passed to character");
+		this.props.passID();
+		this.setState({id: this.props.id});
+		console.log(this.state.id + " id passed");
 	}
 
 	postDataHandler = () => {
@@ -76,28 +77,27 @@ class CreateCharacter extends Component {
 				dmgType: this.state.attacksSpellcasting.dmgType,
 			}],
 
-			money: [{
+			money: {
 				platinum: this.state.money.platinum,
 				gold: this.state.money.gold,
 				electrum: this.state.money.electrum,
 				silver: this.state.money.silver,
 				copper: this.state.money.copper,
-			}],
+			},
 
 			inventory: this.state.inventory,
 
-			characterNotes: [{
+			characterNotes: {
 				traits: this.state.characterNotes.traits,
 				ideals: this.state.characterNotes.traits,
 				bonds: this.state.characterNotes.traits,
 				flaws: this.state.characterNotes.traits,
-			}],
+			},
 
 			featsTraits: this.state.featsTraits
 		}
 
-		// +this.props.userID
-		axios.post('http://localhost:3001/api/character/rjgjviekdkr', data)
+		axios.post('http://localhost:3001/api/character/'+this.props.id, data)
 			.then(response => {
 				console.log(response);
 			}).catch((err) => {

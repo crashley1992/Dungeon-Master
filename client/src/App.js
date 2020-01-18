@@ -18,7 +18,7 @@ class App extends Component {
   idUpdate = (id) => {
     this.setState({id: id},
       () => {
-        console.log(this.state.id + "****test*****");
+        console.log(this.state.id + "****character component test*****");
       })
   }
 
@@ -37,7 +37,7 @@ class App extends Component {
       <Route exact path="/" component={Home} />
       <Route path="/login" 
         render={(props) => ( this.state.loggedIn ? (
-        <UserProfile loggedIn={true} newAccount={true} component={UserProfile}/>
+        <UserProfile loggedIn={true} newAccount={true} component={UserProfile} idUpdate={this.idUpdate}/>
       ) : (
         <Login {...props} 
         handleUpdateLogin={this.handleUpdateLogin}

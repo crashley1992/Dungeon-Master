@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import axios from 'axios';
+import CreateCharacter from './CreateCharacter';
 import CharacterCard from '../component/CharacterCard/CharacterCard';
 import GroupCard from '../component/GroupCard/GroupCard';
 
@@ -7,7 +8,12 @@ class UserProfile extends Component {
     state = {
         characters: [],
         groups: [],
-        "id": ''
+        showComponent: null
+    };
+
+    handleClick = () => {
+        this.setState({ showComponent: true })
+        console.log('The link was clicked.');
     };
 
     componentDidUpdate = (props) => {
@@ -20,7 +26,11 @@ class UserProfile extends Component {
              <div className="profile-page">
                 <div className="character-section">
                     <h1>Characters</h1>
-                    <button className="create-character-btn">Add Character</button>
+                    <button onClick={this.handleClick}>Add Character</button>
+                    { this.state.showComponent ? 
+                    <CreateCharacter /> : 
+                    null
+                    } 
                     <CharacterCard />
                 </div>
                 <div className="group-section">

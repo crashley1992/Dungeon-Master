@@ -54,10 +54,7 @@ class App extends Component {
       )}/>
       <Route path="/logout" component={Home}/>
         
-        {/* temp route */}
-      {/* <Route path="/login/createcharacter" component={CreateCharacter} />
-        <CreateCharacter idUpdate={this.idUpdate}/> */}
-      </Router>
+        </Router>
       )
   }
 }

@@ -6,6 +6,8 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const errorHandler = require('errorhandler');
 
+require('dotenv').config()
+
 //Configure mongoose's promise to global promise
 mongoose.promise = global.Promise;
 

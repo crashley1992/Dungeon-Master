@@ -28,6 +28,10 @@ if(!isProduction) {
   app.use(errorHandler());
 }
 
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+}
+
 //Configure Mongoose for Passwords/Logins
 mongoose.connect("mongodb://localhost/dungeon-master-logins", { useNewUrlParser: true }, (err) => {
   if (err) {

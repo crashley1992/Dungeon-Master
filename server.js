@@ -32,16 +32,11 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
-//Configure Mongoose for Passwords/Logins
-mongoose.connect("mongodb://localhost/dungeon-master-logins", { useNewUrlParser: true }, (err) => {
-  if (err) {
-    console.log(err);
-  } else {
-    console.log('connected to DB');
+//Configure Mongoose for ON HEROKU deployment
+const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/dungeon-master-logins";
+mongoose.connect(MONGODB_URI);
     require('./models/Users');
     require('./models/Character');
-  }
-});
 
 //models and routes
 require('./config/passport');

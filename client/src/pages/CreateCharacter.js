@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import './createcharacter.css'
+import { Redirect } from 'react-router-dom';
+import UserProfile from './UserProfile';
 
 
 
 class CreateCharacter extends Component {
 	state = {
 		id: '',
+		showComponent: null,
 		name: "",
 		class: "",
 		race: "",
@@ -85,6 +88,12 @@ class CreateCharacter extends Component {
 
 		// featsTraits: this.state.featsTraits
 	}
+
+	handleClick = () => {
+        this.setState({ showComponent: true })
+        console.log('The link was clicked.');
+    };
+
 
 	postDataHandler = (event) => {
 		// this.props.passID();
@@ -234,55 +243,38 @@ class CreateCharacter extends Component {
 				
 					<label>Acrobatics (Dex)</label>
 					<input type="radio" value={this.state.acrobatics} onChange={this.handleChange} />
-
 					<label>Animal Handling (Wis)</label>
 					<input type="radio" value={this.state.animal} onChange={this.handleChange} />
-
 					<label>Arcana (Int)</label>
 					<input type="radio" value={this.state.arcana} onChange={this.handleChange} />
-
 					<label>Athletics (Str)</label>
 					<input type="radio" value={this.state.race} onChange={this.handleChange} />
-
 					<label>Deception (Cha)</label>
 					<input type="radio" value={this.state.age} onChange={this.handleChange} />
-
 					<label>History (Int)</label>
 					<input type="radio" value={this.state.history} onChange={this.handleChange} />
-
 					<label>Insight (Wis)</label>
 					<input type="radio" value={this.state.insight} onChange={this.handleChange} />
-
 					<label>Intimidation (Cha)</label>
 					<input type="radio" value={this.state.intimidation} onChange={this.handleChange} />
-
 					<label>Investigation (Int)</label>
 					<input type="radio" value={this.state.investigation} onChange={this.handleChange} />
-
 					<label>Medicine (Wis)</label>
 					<input type="radio" value={this.state.medicine} onChange={this.handleChange} />
-
 					<label>Nature (Int)</label>
 					<input type="radio" value={this.state.nature} onChange={this.handleChange} />
-
 					<label>Perception (Wis)</label>
 					<input type="radio" value={this.state.perception} onChange={this.handleChange} />
-
 					<label>Performance (Cha)</label>
 					<input type="radio" value={this.state.performance} onChange={this.handleChange} />
-
 					<label>Persuasion (Cha)</label>
 					<input type="radio" value={this.state.persuasion} onChange={this.handleChange} />
-
 					<label>Religion (Int)</label>
 					<input type="radio" value={this.state.religion} onChange={this.handleChange} />
-
 					<label>Sleight of Hand (Dex)</label>
 					<input type="radio" value={this.state.sleight} onChange={this.handleChange} />
-
 					<label>Stealth (Dex)</label>
 					<input type="radio" value={this.state.stealth} onChange={this.handleChange} />
-
 					<label>Survival (Wis)</label>
 					<input type="radio" value={this.state.survival} onChange={this.handleChange} />
 				</section> */}
@@ -315,14 +307,12 @@ class CreateCharacter extends Component {
 					<input type="text" value={this.state.atk} onChange={this.handleChange} />
 					<label>Damage Type</label>
 					<input type="text" value={this.state.dmgType} onChange={this.handleChange} />
-
 					<label>Spell Name</label>
 					<input type="text" value={this.state.name} onChange={this.handleChange} />
 					<label>Attack</label>
 					<input type="text" value={this.state.atk} onChange={this.handleChange} />
 					<label>Damage Type</label>
 					<input type="text" value={this.state.dmgType} onChange={this.handleChange} />
-
 					<label>Spell Name</label>
 					<input type="text" value={this.state.name} onChange={this.handleChange} />
 					<label>Attack</label>
@@ -340,10 +330,8 @@ class CreateCharacter extends Component {
 					
 					<label>Electrum</label>
 					<input type="text" value={this.state.electrum} onChange={this.handleChange} />
-
 					<label>Silver</label>
 					<input type="text" value={this.state.silver} onChange={this.handleChange} />
-
 					<label>Copper</label>
 					<input type="text" value={this.state.copper} onChange={this.handleChange} />
 			</section> */}
@@ -356,13 +344,10 @@ class CreateCharacter extends Component {
 			{/* <section id="character-notes">
 					<label>Traits</label>
 					<input type="textbox" value={this.state.traits} onChange={this.handleChange} />
-
 					<label>Ideals</label>
 					<input type="textbox" value={this.state.ideals} onChange={this.handleChange} />
-
 					<label>Bonds</label>
 					<input type="textbox" value={this.state.bonds} onChange={this.handleChange} />
-
 					<label>Flaws</label>
 					<input type="textbox" value={this.state.flaws} onChange={this.handleChange} />
 			</section> */}

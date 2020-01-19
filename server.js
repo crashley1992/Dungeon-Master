@@ -6,8 +6,6 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const errorHandler = require('errorhandler');
 
-require('dotenv').config()
-
 //Configure mongoose's promise to global promise
 mongoose.promise = global.Promise;
 
@@ -34,11 +32,17 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
-//Configure Mongoose for ON HEROKU deployment
+//Configure Mongoose for Passwords/Logins
 const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/dungeon-master-logins";
-mongoose.connect(MONGODB_URI);
+mongoose.connect(MONGODB_URI, { useNewUrlParser: true }, (err) => {
+  if (err) {
+    console.log(err);
+  } else {
+    console.log('connected to DB');
     require('./models/Users');
     require('./models/Character');
+  }
+});
 
 //models and routes
 require('./config/passport');

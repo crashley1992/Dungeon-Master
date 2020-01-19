@@ -1,6 +1,7 @@
 {
   "name": "dungeon-master",
   "version": "1.0.0",
+  "proxy": "http://localhost:3001/",
   "description": "D&amp;D Character tracker",
   "main": "server.js",
   "dependencies": {
@@ -19,7 +20,6 @@
     "passport": "^0.4.1",
     "passport-local": "^1.0.0"
   },
-  "proxy": "http://localhost:3001/",
   "devDependencies": {},
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",

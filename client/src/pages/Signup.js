@@ -19,7 +19,7 @@ class Signup extends Component {
 
         axios.post('http://localhost:3001/api/signup', data)
         .then(response => {
-            console.log(response);
+            // console.log(response);
             this.props.handleSignup()
         }).catch((err) => {
             console.log(err);

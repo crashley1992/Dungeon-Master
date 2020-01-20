@@ -20,7 +20,7 @@ class Login extends Component {
 
         axios.post('http://localhost:3001/api/login', data)
         .then(response => {
-            console.log(response);
+            // console.log(response);
             // console.log(response.data.user.token);
             this.setState({_id: response.data.user._id}, this.props.idUpdate(response.data.user._id))
             this.setState({token: response.data.user.token})

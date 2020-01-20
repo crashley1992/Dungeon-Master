@@ -11,8 +11,8 @@ mongoose.promise = global.Promise;
 
 const PORT = process.env.PORT || 3001;
 
-//Configure isProduction variable
-const isProduction = process.env.NODE_ENV === 'production';
+// //Configure isProduction variable
+// const isProduction = process.env.NODE_ENV === 'production';
 
 const app = express();
 
@@ -54,7 +54,7 @@ require('./config/passport');
 const routes = require('./routes');
 app.use(routes);
 
-//Error handlers & middlewares
+// //Error handlers & middlewares
 // if(!isProduction) {
 //   app.use((err, req, res, next) => {
 //     res.status(err.status || 500);
@@ -69,8 +69,7 @@ app.use(routes);
 // }
 
 // app.use((err, req, res, next) => {
-//  if (err)
-//   return res.status(err.status || 500);
+//   res.status(err.status || 500);
 
 //   res.json({
 //     errors: {

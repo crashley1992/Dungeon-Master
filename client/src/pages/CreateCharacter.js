@@ -188,7 +188,7 @@ class CreateCharacter extends Component {
 
 		axios.post('http://localhost:3001/api/character/'+this.props.id, data)
 			.then(response => {
-				console.log(response);
+				// console.log(response);
 			}).catch((err) => {
 				console.log(err);
 			})

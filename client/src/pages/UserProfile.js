@@ -21,7 +21,7 @@ class UserProfile extends Component {
     componentDidMount() {
         axios.get('http://localhost:3001/api/character/'+this.props.id)
 			.then(response => {
-                console.log(response);
+                // console.log(response);
                 this.setState({characters: response.data})
                 console.log(this.state.characters);
 			}).catch((err) => {

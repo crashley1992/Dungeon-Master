@@ -24,9 +24,9 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'client')));
 app.use(session({ secret: 'dungeon-master-logins', cookie: { maxAge: 60000 }, resave: false, saveUninitialized: false }));
 
-if(!isProduction) {
-  app.use(errorHandler());
-}
+// if(!isProduction) {
+//   app.use(errorHandler());
+// }
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
@@ -55,30 +55,30 @@ const routes = require('./routes');
 app.use(routes);
 
 //Error handlers & middlewares
-if(!isProduction) {
-  app.use((err, req, res, next) => {
-    res.status(err.status || 500);
+// if(!isProduction) {
+//   app.use((err, req, res, next) => {
+//     res.status(err.status || 500);
 
-    res.json({
-      errors: {
-        message: err.message,
-        error: err,
-      },
-    });
-  });
-}
+//     res.json({
+//       errors: {
+//         message: err.message,
+//         error: err,
+//       },
+//     });
+//   });
+// }
 
-app.use((err, req, res, next) => {
- if (err)
-  return res.status(err.status || 500);
+// app.use((err, req, res, next) => {
+//  if (err)
+//   return res.status(err.status || 500);
 
-  res.json({
-    errors: {
-      message: err.message,
-      error: {},
-    },
-  });
-});
+//   res.json({
+//     errors: {
+//       message: err.message,
+//       error: {},
+//     },
+//   });
+// });
 
 app.listen(PORT, () => {
     console.log("App now listening at localhost:" + PORT);
